@@ -24,7 +24,7 @@ public class MiBaseDatos extends SQLiteOpenHelper {
     private static final String TABLA_USER = "CREATE TABLE USER" + "(_id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, phone INT, email TEXT)";
 
     // Sentencia SQL para la creación de tabla palabra
-    private static final String TABLA_WORD = "CREATE TABLE WORD" + "(_id INTEGER PRIMARY KEY AUTOINCREMENT, words VARCHAR)";
+    private static final String TABLA_WORD = "CREATE TABLE WORD" + "(_id INTEGER PRIMARY KEY AUTOINCREMENT, word VARCHAR)";
 
     // CONSTRUCTOR de la clase
     public MiBaseDatos(Context context) {
@@ -49,10 +49,24 @@ public class MiBaseDatos extends SQLiteOpenHelper {
         SQLiteDatabase db = getWritableDatabase();
         if(db != null){
             ContentValues valores = new ContentValues();
+
             valores.put("name", name);
             valores.put("phone", phone);
             valores.put("email", email);
+
             db.insert("USER", null, valores);
+            db.close();
+        }
+    }
+
+    public void insertWord(String word) {
+        SQLiteDatabase db = getWritableDatabase();
+        if(db != null){
+            ContentValues valores = new ContentValues();
+
+            valores.put("word", word);
+
+            db.insert("WORD", null, valores);
             db.close();
         }
     }
@@ -60,17 +74,36 @@ public class MiBaseDatos extends SQLiteOpenHelper {
     public void updateUser(int id, String name, int phone, String email){
         SQLiteDatabase db = getWritableDatabase();
         ContentValues valores = new ContentValues();
+
         valores.put("_id", id);
         valores.put("name", name);
         valores.put("phone", phone);
         valores.put("email", email);
+
         db.update("USER", valores, "_id=" + id, null);
+        db.close();
+    }
+
+    public void updateWord(int id, String word){
+        SQLiteDatabase db = getWritableDatabase();
+        ContentValues valores = new ContentValues();
+
+        valores.put("_id", id);
+        valores.put("word", word);
+
+        db.update("WORD", valores, "_id=" + id, null);
         db.close();
     }
 
     public void deleteUser(int id) {
         SQLiteDatabase db = getWritableDatabase();
         db.delete("USER", "_id="+id, null);
+        db.close();
+    }
+
+    public void deleteWord(int id) {
+        SQLiteDatabase db = getWritableDatabase();
+        db.delete("WORD", "_id="+id, null);
         db.close();
     }
 
