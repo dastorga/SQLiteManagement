@@ -2,6 +2,7 @@ package com.example.dario.sqlitemanagement;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -15,14 +16,14 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-//        MDB.insertUser("Pedro", 111111111, "pedro@DB.es");
-//        MDB.insertUser("Sandra", 222222222, "sandra@DB.es");
-//        MDB.insertUser("Maria", 333333333, "maria@DB.es");
-//        MDB.insertUser("Daniel", 444444444, "daniel@DB.es");
-//        MDB.insertUser("Dario", 444444444, "daniel@DB.es");
-//        MDB.insertUser("Manuel", 444444444, "daniel@DB.es");
-//        MDB.insertUser("Jose", 444444444, "daniel@DB.es");
-//        MDB.insertUser("Mario", 444444444, "daniel@DB.es");
+        MDB.insertUser("Pedro", 111111111, "pedro@DB.es");
+        MDB.insertUser("Sandra", 222222222, "sandra@DB.es");
+        MDB.insertUser("Maria", 333333333, "maria@DB.es");
+        MDB.insertUser("Daniel", 444444444, "daniel@DB.es");
+        MDB.insertUser("Dario", 444444444, "daniel@DB.es");
+        MDB.insertUser("Manuel", 444444444, "daniel@DB.es");
+        MDB.insertUser("Jose", 444444444, "daniel@DB.es");
+        MDB.insertUser("Mario", 444444444, "daniel@DB.es");
 //
 //        MDB.insertUser("Pedro", 111111111, "pedro@DB.es");
 //        MDB.insertUser("Sandra", 222222222, "sandra@DB.es");
@@ -91,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
 //        Integer.toString(MDB.recoverUsers().size());
 
 
-//        Toast.makeText(getApplicationContext(), Integer.toString(MDB.recoverUsers().size()) , Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), Integer.toString(MDB.recoverUsers().size()) , Toast.LENGTH_SHORT).show();
 
 
 

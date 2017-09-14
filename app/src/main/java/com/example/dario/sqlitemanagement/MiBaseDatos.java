@@ -21,10 +21,10 @@ public class MiBaseDatos extends SQLiteOpenHelper {
     private static final String NOMBRE_BASEDATOS = "mibasedatos.db";
 
     // Sentencia SQL para la creación de tabla usuario
-    private static final String TABLA_USER = "CREATE TABLE USER" + "(_id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, phone INT, email TEXT)";
+    private static final String TABLA_USER = "CREATE TABLE USER" + "(_id INT PRIMARY KEY, name TEXT, phone INT, email TEXT)";
 
     // Sentencia SQL para la creación de tabla palabra
-    private static final String TABLA_WORD = "CREATE TABLE WORD" + "(_id INTEGER PRIMARY KEY AUTOINCREMENT, word VARCHAR)";
+    private static final String TABLA_WORD = "CREATE TABLE WORD" + "(_id INT PRIMARY KEY, word VARCHAR)";
 
     // CONSTRUCTOR de la clase
     public MiBaseDatos(Context context) {
@@ -45,11 +45,12 @@ public class MiBaseDatos extends SQLiteOpenHelper {
     }
 
 
-    public void insertUser(String name, int phone, String email) {
+    public void insertUser(int id, String name, int phone, String email) {
         SQLiteDatabase db = getWritableDatabase();
         if(db != null){
             ContentValues valores = new ContentValues();
 
+            valores.put("_id", id);
             valores.put("name", name);
             valores.put("phone", phone);
             valores.put("email", email);
@@ -59,11 +60,12 @@ public class MiBaseDatos extends SQLiteOpenHelper {
         }
     }
 
-    public void insertWord(String word) {
+    public void insertWord(int id, String word) {
         SQLiteDatabase db = getWritableDatabase();
         if(db != null){
             ContentValues valores = new ContentValues();
 
+            valores.put("_id", id);
             valores.put("word", word);
 
             db.insert("WORD", null, valores);
