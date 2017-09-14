@@ -1,2 +1,2 @@
 # SQLiteManagement
-Creacion y gestion de una base de datos SQLite.
+### Creation and management of a SQLite database.
