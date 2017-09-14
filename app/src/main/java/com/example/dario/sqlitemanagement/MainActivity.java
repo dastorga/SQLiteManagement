@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
         MiBaseDatos MDB = new MiBaseDatos(getApplicationContext());
 
 
-        // Escribimos 4 registros en nuestra tabla
+        // Escribimos 8 registros en nuestra tabla
         MDB.insertUser("Pedro", 111111111, "pedro@DB.es");
         MDB.insertUser("Sandra", 222222222, "sandra@DB.es");
         MDB.insertUser("Maria", 333333333, "maria@DB.es");
