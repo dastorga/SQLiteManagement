@@ -135,4 +135,20 @@ public class MiBaseDatos extends SQLiteOpenHelper {
         return lista_users;
     }
 
+    public List<Word> recoverWords() {
+        SQLiteDatabase db = getReadableDatabase();
+        List<Word> lista_words = new ArrayList<Word>();
+        String[] valores_recuperar = {"_id", "word"};
+        Cursor c = db.query("WORD", valores_recuperar, null, null, null, null, null, null);
+        c.moveToFirst();
+        do {
+            Word word = new Word(c.getInt(0), c.getString(1));
+            lista_words.add(word);
+        } while (c.moveToNext());
+        db.close();
+        c.close();
+        return lista_words;
+    }
+
+
 }

@@ -11,7 +11,7 @@ public class User {
     private int phone;
     private String email;
 
-    // Constructor de un objeto Contactos
+    // Constructor de un objeto User
     public User(int id, String name, int phone, String email) {
         this.id = id;
         this.name = name;
