@@ -150,5 +150,11 @@ public class MiBaseDatos extends SQLiteOpenHelper {
         return lista_words;
     }
 
+    public void dropTable(String table) {
+        SQLiteDatabase db = getWritableDatabase();
+        db.execSQL("DROP TABLE IF EXISTS " + table);
+        onCreate(db);
+    }
+
 
 }

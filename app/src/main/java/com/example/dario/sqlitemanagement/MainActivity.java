@@ -2,7 +2,6 @@ package com.example.dario.sqlitemanagement;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -46,8 +45,6 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
-
         // Recuperamos los 4 registros y los mostramos en el log
 //        Log.d("TOTAL", Integer.toString(MDB.recoverUsers().size()));
 //
@@ -75,18 +72,26 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        for (int i = 0; i < MDB.recoverUsers().size(); i++) {
+//        for (int i = 0; i < MDB.recoverUsers().size(); i++) {
+//
+//            String name = MDB.recoverUsers().get(i).getName();
+//            Toast.makeText(getApplicationContext(), name , Toast.LENGTH_SHORT).show();
+//
+//        }
 
-            String name = MDB.recoverUsers().get(i).getName();
-            Toast.makeText(getApplicationContext(), name , Toast.LENGTH_SHORT).show();
-
-        }
-
-
-
-
+//
+//        for (int i = 0; i < MDB.recoverUsers().size(); i++) {
+//
+//            String s  = Integer.toString(MDB.recoverUsers().get(i).getId());
+//            Toast.makeText(getApplicationContext(), s , Toast.LENGTH_SHORT).show();
+//        }
 
 
+        MDB.dropTable("TABLA_USER");
+//        Integer.toString(MDB.recoverUsers().size());
+
+
+//        Toast.makeText(getApplicationContext(), Integer.toString(MDB.recoverUsers().size()) , Toast.LENGTH_SHORT).show();
 
 
 
