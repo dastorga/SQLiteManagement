@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
 //        }
 
 
-        MDB.dropTable("TABLA_USER");
+//        MDB.dropTable("USER");
 //        Integer.toString(MDB.recoverUsers().size());
 
 

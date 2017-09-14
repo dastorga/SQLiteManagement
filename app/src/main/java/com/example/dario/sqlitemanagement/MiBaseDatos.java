@@ -152,8 +152,8 @@ public class MiBaseDatos extends SQLiteOpenHelper {
 
     public void dropTable(String table) {
         SQLiteDatabase db = getWritableDatabase();
-        db.execSQL("DROP TABLE IF EXISTS " + table);
-        onCreate(db);
+        db.execSQL("DELETE FROM " + table);
+        db.close();
     }
 
 
