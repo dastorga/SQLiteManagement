@@ -14,8 +14,12 @@ public class MainActivity extends AppCompatActivity {
 
         MiBaseDatos MDB = new MiBaseDatos(getApplicationContext());
 
-        inserDatos();
-        Toast.makeText(getApplicationContext(), Integer.toString(MDB.recoverUsers().size()) , Toast.LENGTH_SHORT).show();
+        insertDatos(MDB);
+        showDatos(MDB);
+        deleteDatos(MDB);
+
+
+
 
 
 //        Log.d("TOTAL", Integer.toString(MDB.recoverUsers().size()));
@@ -44,12 +48,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-//        for (int i = 0; i < MDB.recoverUsers().size(); i++) {
-//
-//            String name = MDB.recoverUsers().get(i).getName();
-//            Toast.makeText(getApplicationContext(), name , Toast.LENGTH_SHORT).show();
-//
-//        }
+
 
 //
 //        for (int i = 0; i < MDB.recoverUsers().size(); i++) {
@@ -84,11 +83,7 @@ public class MainActivity extends AppCompatActivity {
 //        MDB.borrarCONTACTO(3);
     }
 
-
-    public void inserDatos(){
-
-        MiBaseDatos MDB = new MiBaseDatos(getApplicationContext());
-
+    public void insertDatos(MiBaseDatos MDB){
         MDB.insertUser(1, "Pedro", 111111111, "pedro@DB.es");
         MDB.insertUser(2, "Sandra", 222222222, "sandra@DB.es");
         MDB.insertUser(3, "Maria", 333333333, "maria@DB.es");
@@ -97,7 +92,6 @@ public class MainActivity extends AppCompatActivity {
         MDB.insertUser(6, "Manuel", 444444444, "daniel@DB.es");
         MDB.insertUser(7, "Jose", 444444444, "daniel@DB.es");
         MDB.insertUser(8, "Mario", 444444444, "daniel@DB.es");
-
 
         MDB.insertUser(9, "Ramiro", 111111111, "pedro@DB.es");
         MDB.insertUser(10, "Luisa", 222222222, "sandra@DB.es");
@@ -108,7 +102,6 @@ public class MainActivity extends AppCompatActivity {
         MDB.insertUser(15, "Melina", 444444444, "daniel@DB.es");
         MDB.insertUser(16, "Marito G", 444444444, "daniel@DB.es");
 
-
         MDB.insertUser(17, "Juan", 111111111, "pedro@DB.es");
         MDB.insertUser(18, "Andres", 222222222, "sandra@DB.es");
         MDB.insertUser(19, "Mauro", 333333333, "maria@DB.es");
@@ -117,6 +110,20 @@ public class MainActivity extends AppCompatActivity {
         MDB.insertUser(22, "Juarez", 444444444, "daniel@DB.es");
         MDB.insertUser(23, "Cavenagui", 444444444, "daniel@DB.es");
         MDB.insertUser(24, "Tevez", 444444444, "daniel@DB.es");
-
     }
+
+    public void showDatos(MiBaseDatos MDB){
+        for (int i = 0; i < MDB.recoverUsers().size(); i++) {
+            String name = MDB.recoverUsers().get(i).getName();
+            Toast.makeText(getApplicationContext(), name , Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    public void deleteDatos(MiBaseDatos MDB){
+        for (int i = 0; i < MDB.recoverUsers().size(); i++) {
+            MDB.deleteUser(i);
+        }
+        Toast.makeText(getApplicationContext(), "END" , Toast.LENGTH_SHORT).show();
+    }
+
 }
