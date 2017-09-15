@@ -152,6 +152,7 @@ public class MiBaseDatos extends SQLiteOpenHelper {
         return lista_words;
     }
 
+    // Elimina la tabla que se pasa como parametro
     public void dropTable(String table) {
         SQLiteDatabase db = getWritableDatabase();
         db.execSQL("DELETE FROM " + table);

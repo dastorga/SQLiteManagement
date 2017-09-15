@@ -14,39 +14,10 @@ public class MainActivity extends AppCompatActivity {
 
         MiBaseDatos MDB = new MiBaseDatos(getApplicationContext());
 
+        inserDatos();
+        Toast.makeText(getApplicationContext(), Integer.toString(MDB.recoverUsers().size()) , Toast.LENGTH_SHORT).show();
 
 
-        MDB.insertUser("Pedro", 111111111, "pedro@DB.es");
-        MDB.insertUser("Sandra", 222222222, "sandra@DB.es");
-        MDB.insertUser("Maria", 333333333, "maria@DB.es");
-        MDB.insertUser("Daniel", 444444444, "daniel@DB.es");
-        MDB.insertUser("Dario", 444444444, "daniel@DB.es");
-        MDB.insertUser("Manuel", 444444444, "daniel@DB.es");
-        MDB.insertUser("Jose", 444444444, "daniel@DB.es");
-        MDB.insertUser("Mario", 444444444, "daniel@DB.es");
-//
-//        MDB.insertUser("Pedro", 111111111, "pedro@DB.es");
-//        MDB.insertUser("Sandra", 222222222, "sandra@DB.es");
-//        MDB.insertUser("Maria", 333333333, "maria@DB.es");
-//        MDB.insertUser("Daniel", 444444444, "daniel@DB.es");
-//        MDB.insertUser("Dario", 444444444, "daniel@DB.es");
-//        MDB.insertUser("Manuel", 444444444, "daniel@DB.es");
-//        MDB.insertUser("Jose", 444444444, "daniel@DB.es");
-//        MDB.insertUser("Mario", 444444444, "daniel@DB.es");
-//
-//        MDB.insertUser("9", 111111111, "pedro@DB.es");
-//        MDB.insertUser("10", 222222222, "sandra@DB.es");
-//        MDB.insertUser("11", 333333333, "maria@DB.es");
-//        MDB.insertUser("12", 444444444, "daniel@DB.es");
-//        MDB.insertUser("13", 444444444, "daniel@DB.es");
-//        MDB.insertUser("14", 444444444, "daniel@DB.es");
-//        MDB.insertUser("15", 444444444, "daniel@DB.es");
-//        MDB.insertUser("16", 444444444, "daniel@DB.es");
-
-
-
-
-        // Recuperamos los 4 registros y los mostramos en el log
 //        Log.d("TOTAL", Integer.toString(MDB.recoverUsers().size()));
 //
 //        int[] ids = new int[MDB.recoverUsers().size()];
@@ -92,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
 //        Integer.toString(MDB.recoverUsers().size());
 
 
-        Toast.makeText(getApplicationContext(), Integer.toString(MDB.recoverUsers().size()) , Toast.LENGTH_SHORT).show();
+//        Toast.makeText(getApplicationContext(), Integer.toString(MDB.recoverUsers().size()) , Toast.LENGTH_SHORT).show();
 
 
 
@@ -111,5 +82,41 @@ public class MainActivity extends AppCompatActivity {
 //
 //        // Borramos el registro 3
 //        MDB.borrarCONTACTO(3);
+    }
+
+
+    public void inserDatos(){
+
+        MiBaseDatos MDB = new MiBaseDatos(getApplicationContext());
+
+        MDB.insertUser(1, "Pedro", 111111111, "pedro@DB.es");
+        MDB.insertUser(2, "Sandra", 222222222, "sandra@DB.es");
+        MDB.insertUser(3, "Maria", 333333333, "maria@DB.es");
+        MDB.insertUser(4, "Daniel", 444444444, "daniel@DB.es");
+        MDB.insertUser(5, "Dario", 444444444, "daniel@DB.es");
+        MDB.insertUser(6, "Manuel", 444444444, "daniel@DB.es");
+        MDB.insertUser(7, "Jose", 444444444, "daniel@DB.es");
+        MDB.insertUser(8, "Mario", 444444444, "daniel@DB.es");
+
+
+        MDB.insertUser(9, "Ramiro", 111111111, "pedro@DB.es");
+        MDB.insertUser(10, "Luisa", 222222222, "sandra@DB.es");
+        MDB.insertUser(11, "Pedro", 333333333, "maria@DB.es");
+        MDB.insertUser(12, "Jose", 444444444, "daniel@DB.es");
+        MDB.insertUser(13, "Pepo", 444444444, "daniel@DB.es");
+        MDB.insertUser(14, "Mauricio", 444444444, "daniel@DB.es");
+        MDB.insertUser(15, "Melina", 444444444, "daniel@DB.es");
+        MDB.insertUser(16, "Marito G", 444444444, "daniel@DB.es");
+
+
+        MDB.insertUser(17, "Juan", 111111111, "pedro@DB.es");
+        MDB.insertUser(18, "Andres", 222222222, "sandra@DB.es");
+        MDB.insertUser(19, "Mauro", 333333333, "maria@DB.es");
+        MDB.insertUser(20, "Walter", 444444444, "daniel@DB.es");
+        MDB.insertUser(21, "Hernesto", 444444444, "daniel@DB.es");
+        MDB.insertUser(22, "Juarez", 444444444, "daniel@DB.es");
+        MDB.insertUser(23, "Cavenagui", 444444444, "daniel@DB.es");
+        MDB.insertUser(24, "Tevez", 444444444, "daniel@DB.es");
+
     }
 }
