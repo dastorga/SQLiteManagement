@@ -11,76 +11,19 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        int num = 12;
         MiBaseDatos MDB = new MiBaseDatos(getApplicationContext());
 
-        insertDatos(MDB);
-        showDatos(MDB);
-        deleteDatos(MDB);
+//        insertDatos(MDB);
 
+//        showDatos(MDB);
 
+//        deleteDatos(MDB);
 
+//        insertDatosCrazy(MDB, num);
 
+//        showDatosCrazy(MDB, num);
 
-//        Log.d("TOTAL", Integer.toString(MDB.recoverUsers().size()));
-//
-//        int[] ids = new int[MDB.recoverUsers().size()];
-//
-//        String[] names = new String[MDB.recoverUsers().size()];
-//
-//        int[] phones = new int[MDB.recoverUsers().size()];
-//
-//        String[] emails = new String[MDB.recoverUsers().size()];
-//
-//
-//        for (int i = 0; i < MDB.recoverUsers().size(); i++) {
-//
-//            ids[i] = MDB.recoverUsers().get(i).getId();
-//
-//            names[i] = MDB.recoverUsers().get(i).getName();
-//
-//            phones[i] = MDB.recoverUsers().get(i).getPhone();
-//
-//            emails[i] = MDB.recoverUsers().get(i).getEmail();
-//
-//            Log.d(""+ids[i], names[i] + ", " + phones[i] + ", " + emails[i]);
-//        }
-
-
-
-
-
-//
-//        for (int i = 0; i < MDB.recoverUsers().size(); i++) {
-//
-//            String s  = Integer.toString(MDB.recoverUsers().get(i).getId());
-//            Toast.makeText(getApplicationContext(), s , Toast.LENGTH_SHORT).show();
-//        }
-
-
-//        MDB.dropTable("USER");
-//        Integer.toString(MDB.recoverUsers().size());
-
-
-//        Toast.makeText(getApplicationContext(), Integer.toString(MDB.recoverUsers().size()) , Toast.LENGTH_SHORT).show();
-
-
-
-//        Log.d("Total de USERS", String.valueOf(MDB.recoverUsers().size()));
-
-
-//        // Modificamos el registro 3
-//        MDB.modificarCONTACTO(3, "PPPPP", 121212121, "xxxx@xxxx.es");
-//
-//        // Recuperamos el 3 registro y lo mostramos en el log
-//        int id = MDB.recuperarCONTACTO(3).getID();
-//        String nombre = MDB.recuperarCONTACTO(3).getNOMBRE();
-//        int telefono = MDB.recuperarCONTACTO(3).getTELEFONO();
-//        String email = MDB.recuperarCONTACTO(3).getEMAIL();
-//        Log.d(""+id, nombre + ", " + telefono + ", " + email);
-//
-//        // Borramos el registro 3
-//        MDB.borrarCONTACTO(3);
     }
 
     public void insertDatos(MiBaseDatos MDB){
@@ -124,6 +67,20 @@ public class MainActivity extends AppCompatActivity {
             MDB.deleteUser(i);
         }
         Toast.makeText(getApplicationContext(), "END" , Toast.LENGTH_SHORT).show();
+    }
+
+    public void insertDatosCrazy(MiBaseDatos MDB, int num){
+        for (int i = 0; i < num; i++) {
+            MDB.insertUser(i,"Crazy",i,"crazy@crazy.com");
+        }
+        Toast.makeText(getApplicationContext(), "END CRAZY" , Toast.LENGTH_SHORT).show();
+    }
+
+    public void showDatosCrazy(MiBaseDatos MDB, int num){
+        for (int i = 0; i < num; i++) {
+            Toast.makeText(getApplicationContext(), i + " "+MDB.recoverUsers().get(i).getName() , Toast.LENGTH_SHORT).show();
+        }
+        Toast.makeText(getApplicationContext(), "END SHOW CRAZY" , Toast.LENGTH_SHORT).show();
     }
 
 }
