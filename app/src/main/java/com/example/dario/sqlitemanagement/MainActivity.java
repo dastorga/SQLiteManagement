@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
         int num = 12;
         MiBaseDatos MDB = new MiBaseDatos(getApplicationContext());
 
-//        insertDatos(MDB);
+//        insertDatos(MDB,500,"Pedro", 505050, "pedro@gmail.com");
 
 //        showDatos(MDB);
 
@@ -26,33 +26,9 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void insertDatos(MiBaseDatos MDB){
-        MDB.insertUser(1, "Pedro", 111111111, "pedro@DB.es");
-        MDB.insertUser(2, "Sandra", 222222222, "sandra@DB.es");
-        MDB.insertUser(3, "Maria", 333333333, "maria@DB.es");
-        MDB.insertUser(4, "Daniel", 444444444, "daniel@DB.es");
-        MDB.insertUser(5, "Dario", 444444444, "daniel@DB.es");
-        MDB.insertUser(6, "Manuel", 444444444, "daniel@DB.es");
-        MDB.insertUser(7, "Jose", 444444444, "daniel@DB.es");
-        MDB.insertUser(8, "Mario", 444444444, "daniel@DB.es");
-
-        MDB.insertUser(9, "Ramiro", 111111111, "pedro@DB.es");
-        MDB.insertUser(10, "Luisa", 222222222, "sandra@DB.es");
-        MDB.insertUser(11, "Pedro", 333333333, "maria@DB.es");
-        MDB.insertUser(12, "Jose", 444444444, "daniel@DB.es");
-        MDB.insertUser(13, "Pepo", 444444444, "daniel@DB.es");
-        MDB.insertUser(14, "Mauricio", 444444444, "daniel@DB.es");
-        MDB.insertUser(15, "Melina", 444444444, "daniel@DB.es");
-        MDB.insertUser(16, "Marito G", 444444444, "daniel@DB.es");
-
-        MDB.insertUser(17, "Juan", 111111111, "pedro@DB.es");
-        MDB.insertUser(18, "Andres", 222222222, "sandra@DB.es");
-        MDB.insertUser(19, "Mauro", 333333333, "maria@DB.es");
-        MDB.insertUser(20, "Walter", 444444444, "daniel@DB.es");
-        MDB.insertUser(21, "Hernesto", 444444444, "daniel@DB.es");
-        MDB.insertUser(22, "Juarez", 444444444, "daniel@DB.es");
-        MDB.insertUser(23, "Cavenagui", 444444444, "daniel@DB.es");
-        MDB.insertUser(24, "Tevez", 444444444, "daniel@DB.es");
+    public void insertDatos(MiBaseDatos MDB, int id, String name, int phone, String email ){
+        MDB.insertUser(id, name, phone, email);
+        Toast.makeText(getApplicationContext(), "END INSERT" , Toast.LENGTH_SHORT).show();
     }
 
     public void showDatos(MiBaseDatos MDB){
